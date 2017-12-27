@@ -27,6 +27,8 @@ public class Player : MonoBehaviour {
 	public MazeSpawner mazeSpawner;
 
 	public int CubesCount;
+
+	public bool isCollectedAllCubes;
 	
 	public void onCubeCollect()
 	{
@@ -65,9 +67,12 @@ public class Player : MonoBehaviour {
 	{
 
 		Slider.value = health;
-		
+
 
 		mazeSpawner = wallSpawner.GetComponent<MazeSpawner>();
+
+		isCollectedAllCubes = CubesCount == mazeSpawner.maxCubeCount;
+
 		
 		if (health <= 0)
 		{		

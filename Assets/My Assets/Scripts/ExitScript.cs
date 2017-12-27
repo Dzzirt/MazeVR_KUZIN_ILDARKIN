@@ -20,7 +20,10 @@ public class ExitScript : MonoBehaviour
 	
 	public void onClick()
 	{
-		Player.winCount++;
-		Player.Restart();
+		if (Player.isCollectedAllCubes)
+		{
+			Player.winCount++;
+			Player.Restart();
+		}
 	}
 }
