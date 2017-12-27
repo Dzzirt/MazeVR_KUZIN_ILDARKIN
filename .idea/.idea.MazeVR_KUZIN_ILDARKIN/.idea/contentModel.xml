@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Unity\MazeVR_KUZIN_ILDARKIN" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="PivotManager.cs" t="Include" />
+          <e p="ReplaceSelection.cs" t="Include" />
+        </e>
+        <e p="GoogleVR" t="Include">
+          <e p="DemoScenes" t="Include">
+            <e p="ControllerDemo" t="Include">
+              <e p="ControllerDebugInfo.cs" t="Include" />
+              <e p="ControllerDemoManager.cs" t="Include" />
+            </e>
+            <e p="HeadsetDemo" t="Include">
+              <e p="Teleport.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Distortion" t="Include">
+            <e p="GvrDistortion.cginc" t="Include" />
+          </e>
+          <e p="Editor" t="Include">
+            <e p="GvrAudioListenerEditor.cs" t="Include" />
+            <e p="GvrAudioRoomEditor.cs" t="Include" />
+            <e p="GvrAudioSoundfieldEditor.cs" t="Include" />
+            <e p="GvrAudioSourceEditor.cs" t="Include" />
+            <e p="GvrCompatibilityChecker.cs" t="Include" />
+            <e p="GvrGazeEditor.cs" t="Include" />
+          </e>
+          <e p="Legacy" t="Include">
+            <e p="Editor" t="Include">
+              <e p="GvrMenu.cs" t="Include" />
+              <e p="GvrViewerEditor.cs" t="Include" />
+              <e p="StereoControllerEditor.cs" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="SolidColor.shader" t="Include" />
+              <e p="UnlitTexture.shader" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="GvrHead.cs" t="Include" />
+              <e p="Internal" t="Include">
+                <e p="GvrCameraUtils.cs" t="Include" />
+                <e p="GvrEye.cs" t="Include" />
+                <e p="GvrPostRender.cs" t="Include" />
+                <e p="GvrPreRender.cs" t="Include" />
+                <e p="GvrProfile.cs" t="Include" />
+                <e p="StereoController.cs" t="Include" />
+                <e p="StereoRenderEffect.cs" t="Include" />
+                <e p="VRDevices" t="Include">
+                  <e p="AndroidDevice.cs" t="Include" />
+                  <e p="BaseAndroidDevice.cs" t="Include" />
+                  <e p="BaseVRDevice.cs" t="Include" />
+                  <e p="EditorDevice.cs" t="Include" />
+                  <e p="GvrDevice.cs" t="Include" />
+                  <e p="iOSDevice.cs" t="Include" />
+                  <e p="UnityVRDevice.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Resources" t="Include">
+            <e p="UI" t="Include">
+              <e p="GvrReticleShader.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Audio" t="Include">
+              <e p="GvrAudio.cs" t="Include" />
+              <e p="GvrAudioListener.cs" t="Include" />
+              <e p="GvrAudioRoom.cs" t="Include" />
+              <e p="GvrAudioSoundfield.cs" t="Include" />
+              <e p="GvrAudioSource.cs" t="Include" />
+            </e>
+            <e p="Controller" t="Include">
+              <e p="GvrController.cs" t="Include" />
+              <e p="Internal" t="Include">
+                <e p="ControllerProviderFactory.cs" t="Include" />
+                <e p="ControllerProviders" t="Include">
+                  <e p="AndroidNativeControllerProvider.cs" t="Include" />
+                  <e p="DummyControllerProvider.cs" t="Include" />
+                  <e p="EmulatorControllerProvider.cs" t="Include" />
+                </e>
+                <e p="ControllerState.cs" t="Include" />
+                <e p="Emulator" t="Include">
+                  <e p="EmulatorClientSocket.cs" t="Include" />
+                  <e p="EmulatorConfig.cs" t="Include" />
+                  <e p="EmulatorDataTypes.cs" t="Include" />
+                  <e p="EmulatorManager.cs" t="Include" />
+                  <e p="PhoneEvent.cs" t="Include" />
+                </e>
+                <e p="IControllerProvider.cs" t="Include" />
+              </e>
+            </e>
+            <e p="GazeInputModule.cs" t="Include" />
+            <e p="GvrSettings.cs" t="Include" />
+            <e p="GvrViewer.cs" t="Include" />
+            <e p="Pose3D.cs" t="Include" />
+            <e p="UI" t="Include">
+              <e p="GvrGaze.cs" t="Include" />
+              <e p="GvrReticle.cs" t="Include" />
+              <e p="IGvrGazePointer.cs" t="Include" />
+              <e p="IGvrGazeResponder.cs" t="Include" />
+            </e>
+            <e p="Utilities" t="Include">
+              <e p="GvrFPS.cs" t="Include" />
+              <e p="GvrIntent.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="My Assets" t="Include">
+          <e p="modified" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Waypoint_Modified.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="BasicMazeGenerator.cs" t="Include" />
+            <e p="Cube.cs" t="Include" />
+            <e p="DivisionMazeGenerator.cs" t="Include" />
+            <e p="Door.cs" t="Include" />
+            <e p="Elixer.cs" t="Include" />
+            <e p="Enemy.cs" t="Include" />
+            <e p="ExitScript.cs" t="Include" />
+            <e p="Items.cs" t="Include" />
+            <e p="Key.cs" t="Include" />
+            <e p="LevelDoor.cs" t="Include" />
+            <e p="MazeCell.cs" t="Include" />
+            <e p="MazeFiller.cs" t="Include" />
+            <e p="MazeSpawner.cs" t="Include" />
+            <e p="OldestTreeMazeGenerator.cs" t="Include" />
+            <e p="Player.cs" t="Include" />
+            <e p="RandomTreeMazeGenerator.cs" t="Include" />
+            <e p="RecursiveMazeGenerator.cs" t="Include" />
+            <e p="RecursiveTreeMazeGenerator.cs" t="Include" />
+            <e p="RollerBall.cs" t="Include" />
+            <e p="ThrowObject.cs" t="Include" />
+            <e p="Torch.cs" t="Include" />
+            <e p="TreeMazeGenerator.cs" t="Include" />
+            <e p="Unlock_door.cs" t="Include" />
+            <e p="WaypointSpawner.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Android" t="Include">
+            <e p="AndroidManifest-6DOF.xml" t="Include" />
+            <e p="AndroidManifest-Cardboard.xml" t="Include" />
+            <e p="AndroidManifest-Daydream.xml" t="Include" />
+            <e p="AndroidManifest.xml" t="Include" />
+            <e p="proguard-gvr.txt" t="Include" />
+          </e>
+          <e p="Editor" t="Include">
+            <e p="JetBrains" t="Include">
+              <e p="Unity3DRider.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="RomanCityPack1Lite" t="Include">
+          <e p="readme.txt" t="Include" />
+        </e>
+        <e p="torch" t="Include">
+          <e p="readme.txt" t="Include" />
+          <e p="scene" t="Include">
+            <e p="script" t="Include">
+              <e p="TorchSlider.cs" t="Include" />
+              <e p="Torchslider2.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Torchelight.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="MazeVR_KUZIN_ILDARKIN.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+    <e p="C:\Users\Nikita\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_MazeVR_KUZIN_ILDARKIN.-511506870.00" t="ExcludeRecursive" />
+  </component>
+</project>
