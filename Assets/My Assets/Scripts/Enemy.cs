@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
+using Random = System.Random;
 
 public class Enemy : MonoBehaviour
 {
@@ -35,7 +37,7 @@ public class Enemy : MonoBehaviour
 
     public float MAX_ATTACK_DELAY = 2000;
 
-    public float waitingTime = 1f;
+    public float waitingTime = 0.5f;
 
     public float timer = 0f;
 
@@ -45,6 +47,8 @@ public class Enemy : MonoBehaviour
 
     public int lastPlayerCol;
     public int lastPlayerRow;
+    
+    public System.Random random = new Random();
 
 
     public int health = 3;
@@ -58,12 +62,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > waitingTime)
-        {
-            timer = 0f;
-            updateState();
-        }
+        updateState();
+
     }
     
     void OnCollisionEnter(Collision collision)
@@ -266,42 +266,59 @@ public class Enemy : MonoBehaviour
         {
             case EnemyState.IDLE:
 //                updateRangeMazeIfNeeds();
-
                 checkZone();
+
                 break;
             case EnemyState.ATTACK:
-                
-                var newPos = Camera.main.transform.position;
-                var dif = newPos - transform.position;
-
-                if (dif.x < 0)
+                timer += Time.deltaTime;
+                if (timer > waitingTime)
                 {
-                    transform.rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f)); ;
+                    timer = 0f;
+                    if (player.cell.colPos == cell.colPos - 1 && player.cell.rowPos == cell.rowPos ||
+                        player.cell.colPos == cell.colPos + 1 && player.cell.rowPos == cell.rowPos ||
+                        player.cell.rowPos == cell.rowPos - 1 && player.cell.colPos == cell.colPos ||
+                        player.cell.rowPos == cell.rowPos + 1 && player.cell.colPos == cell.colPos)
+                    {
+                        var newPos = Camera.main.transform.position;
+                        var dif = newPos - transform.position;
 
-                }
+                        if (dif.x < 0)
+                        {
+                            transform.rotation = Quaternion.Euler(new Vector3(0f, -90f, 0f));
+                            ;
 
-                if (dif.x > 0)
-                {
-                    transform.rotation = Quaternion.Euler(new Vector3(0f, 90f, 0f)); ;
+                        }
 
-                }
-                    
-                    
+                        if (dif.x > 0)
+                        {
+                            transform.rotation = Quaternion.Euler(new Vector3(0f, 90f, 0f));
+                            ;
 
-                if (dif.z < 0)
-                {
-                    transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f)); ;
+                        }
 
-                }
-                    
-                if (dif.z > 0)
-                {
-                    transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f)); ;
-                }
-                
-                anim.Play("attack");
-                player.health -= 1;
-                enemyState = EnemyState.PURSUE;
+
+
+                        if (dif.z < 0)
+                        {
+                            transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+                            ;
+
+                        }
+
+                        if (dif.z > 0)
+                        {
+                            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+                            ;
+                        }
+
+                        anim.Play("attack" + random.Next(1));
+                        player.health -= 1;
+                    }
+                    else
+                    {
+                        enemyState = EnemyState.PURSUE;  
+                    }
+                }       
                 break;
             case EnemyState.PURSUE:
                 updateRangeMazeIfNeeds();
@@ -314,21 +331,29 @@ public class Enemy : MonoBehaviour
     {
         if (cell != null && player.cell != null)
         {
-            checkSide(Side.BACK);
-            checkSide(Side.FRONT);
-            checkSide(Side.LEFT);
-            checkSide(Side.RIGHT);
+            if (!checkSide(Side.BACK))
+            {
+                if (!checkSide(Side.FRONT))
+                {
+                    if (!checkSide(Side.LEFT))
+                    {
+                        checkSide(Side.RIGHT);
+                    }
+                }
+            }
         }
     }
 
-    private void checkSide(Side side)
+    private bool checkSide(Side side)
     {
         var currentCell = cell;
+        
         for (int i = 1; i < range; i++)
         {
             if (player.cell.rowPos == currentCell.rowPos && player.cell.colPos == currentCell.colPos)
             {
                 enemyState = EnemyState.PURSUE;
+                return true;
             }
 
             var nextRow = cell.rowPos;
@@ -377,5 +402,6 @@ public class Enemy : MonoBehaviour
 
             currentCell = maze[nextRow, nextCol];
         }
+        return false;
     }
 }

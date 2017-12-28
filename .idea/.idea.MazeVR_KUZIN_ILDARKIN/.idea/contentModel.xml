@@ -112,6 +112,15 @@
             </e>
           </e>
         </e>
+        <e p="Monster" t="Include">
+          <e p="shaders" t="Include">
+            <e p="bumpSpecmap.shader" t="Include" />
+            <e p="caveShader.shader" t="Include" />
+            <e p="metalA.shader" t="Include" />
+            <e p="monsterShader.shader" t="Include" />
+            <e p="vertexAnim.shader" t="Include" />
+          </e>
+        </e>
         <e p="My Assets" t="Include">
           <e p="modified" t="Include">
             <e p="Scripts" t="Include">
@@ -140,6 +149,7 @@
             <e p="RollerBall.cs" t="Include" />
             <e p="ThrowObject.cs" t="Include" />
             <e p="Torch.cs" t="Include" />
+            <e p="Trap.cs" t="Include" />
             <e p="TreeMazeGenerator.cs" t="Include" />
             <e p="Unlock_door.cs" t="Include" />
             <e p="WaypointSpawner.cs" t="Include" />
@@ -173,6 +183,9 @@
           <e p="Scripts" t="Include">
             <e p="Torchelight.cs" t="Include" />
           </e>
+        </e>
+        <e p="trap3" t="Include">
+          <e p="badfluid@gmail.com.txt" t="Include" />
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />

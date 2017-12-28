@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExitScript : MonoBehaviour
 {
 
 	public Player Player;
+
+	public GameObject doorText;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +25,7 @@ public class ExitScript : MonoBehaviour
 	{
 		if (Player.isCollectedAllCubes)
 		{
-			Player.winCount++;
+			Player.handleWin();
 			Player.Restart();
 		}
 	}

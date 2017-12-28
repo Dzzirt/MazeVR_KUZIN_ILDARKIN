@@ -25,20 +25,25 @@ public class LevelDoor : MonoBehaviour
 		{
 				case 1:
 					MazeSpawner.maxCubeCount = 4;
-					MazeSpawner.basicEnemyCount = 2;
+					MazeSpawner.basicEnemyCount = 1;
+					MazeSpawner.smallEnemyCount = 2;
+					MazeSpawner.trapCount = 1;
 					MazeSpawner.Rows = 5;
 					MazeSpawner.Columns = 5;
-					
 					break;
 				case 2:
 					MazeSpawner.maxCubeCount = 6;
-					MazeSpawner.basicEnemyCount = 4;
+					MazeSpawner.basicEnemyCount = 2;
+					MazeSpawner.smallEnemyCount = 2;
+					MazeSpawner.trapCount = 2;
 					MazeSpawner.Rows = 7;
 					MazeSpawner.Columns = 7;
 					break;
 				case 3:
 					MazeSpawner.maxCubeCount = 8;
-					MazeSpawner.basicEnemyCount = 6;
+					MazeSpawner.basicEnemyCount = 3;
+					MazeSpawner.smallEnemyCount = 3;
+					MazeSpawner.trapCount = 3;
 					MazeSpawner.Rows = 10;
 					MazeSpawner.Columns = 10;
 					break;

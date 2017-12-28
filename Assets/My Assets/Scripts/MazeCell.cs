@@ -23,15 +23,9 @@ public enum ExitSide
 
 
 public enum EnemyType{
-	Death,
-	Plague,
-	War,
-	Hunger,
-	Basic,
-	FrozenTrap,
-	FireTrap,
-	PoisonTrap,
-	LightingTrap,
+	Small,
+	Medium,
+	Trap,
 	None
 };
 //<summary>

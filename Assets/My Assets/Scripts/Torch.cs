@@ -17,6 +17,6 @@ public class Torch : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector3 forward = Camera.main.transform.forward;
-        transform.position = Camera.main.transform.position + forward * 0.4f;
+        transform.position = Camera.main.transform.position + forward * 0.2f;
     }
 }

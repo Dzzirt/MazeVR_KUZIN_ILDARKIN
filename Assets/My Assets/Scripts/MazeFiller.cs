@@ -7,14 +7,16 @@ public class MazeFiller
 {
 
 	private int mCubeCount;
-	private int mBasicEnemyCount;
+	private int mediumMonsterCount;
+	private int smallEnemyCount;
 	private int mTrapCount;
 	
 	
-	public MazeFiller(int cubeCount, int basicEnemyCount, int trapCount)
+	public MazeFiller(int cubeCount, int basicEnemyCount, int trapCount, int smallEnemyCount)
 	{
 		mCubeCount = cubeCount;
-		mBasicEnemyCount = basicEnemyCount;
+		mediumMonsterCount = basicEnemyCount;
+		this.smallEnemyCount = smallEnemyCount;
 		mTrapCount = trapCount;
 	}
 
@@ -78,7 +80,7 @@ public class MazeFiller
 
 		}
 		
-		for (int k = 0; k < mBasicEnemyCount; k++)
+		for (int k = 0; k < mediumMonsterCount; k++)
 		{
 			var randomCol = random.Next(colCount - 1);
 			var randomRow = random.Next(rowCount - 1);
@@ -102,7 +104,63 @@ public class MazeFiller
 					continue;
 				}
 			}
-			mazeCell.enemyType = EnemyType.Basic;
+			mazeCell.enemyType = EnemyType.Medium;
+
+		}
+		
+		for (int k = 0; k < smallEnemyCount; k++)
+		{
+			var randomCol = random.Next(colCount - 1);
+			var randomRow = random.Next(rowCount - 1);
+			var mazeCell = maze[randomRow, randomCol];
+
+			if (randomCol == 0 && randomRow == 0)
+			{
+				k--;
+				continue;
+			}
+			
+			while (mazeCell.enemyType != EnemyType.None)
+			{
+				randomCol = random.Next(colCount - 1);
+				randomRow = random.Next(rowCount - 1);
+				mazeCell = maze[randomRow, randomCol];
+				
+				if (randomCol == 0 && randomRow == 0)
+				{
+					k--;
+					continue;
+				}
+			}
+			mazeCell.enemyType = EnemyType.Small;
+
+		}
+		
+		for (int k = 0; k < mTrapCount; k++)
+		{
+			var randomCol = random.Next(colCount - 1);
+			var randomRow = random.Next(rowCount - 1);
+			var mazeCell = maze[randomRow, randomCol];
+
+			if (randomCol == 0 && randomRow == 0)
+			{
+				k--;
+				continue;
+			}
+			
+			while (mazeCell.enemyType != EnemyType.None)
+			{
+				randomCol = random.Next(colCount - 1);
+				randomRow = random.Next(rowCount - 1);
+				mazeCell = maze[randomRow, randomCol];
+				
+				if (randomCol == 0 && randomRow == 0)
+				{
+					k--;
+					continue;
+				}
+			}
+			mazeCell.enemyType = EnemyType.Trap;
 
 		}
 		

@@ -4,6 +4,7 @@ public class ThrowObject : MonoBehaviour
 {
     public GameObject Stone = null;
     public GameObject tmp = null;
+    public GameObject parent = null;
     public Transform player;
     public Transform playerCam;
     public float throwForce = 10;
@@ -20,17 +21,17 @@ public class ThrowObject : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")/*GvrController.AppButtonDown*/)
+        if (Input.GetButtonDown("Fire2")/*GvrController.AppButtonDown*/)
         {
             
             tmp =
-                Instantiate(Stone, playerCam.position + new Vector3(player.transform.forward.x, player.transform.forward.y, player.transform.forward.z + 0.5f) ,
+                Instantiate(Stone, parent.transform.position,
                     Quaternion.identity);
             tmp.GetComponent<Rigidbody>().isKinematic = true;
-            tmp.transform.parent = playerCam;
+            tmp.transform.parent = parent.transform;    
 //            tmp.transform.position = playerCam.transform.position + player.transform.forward * 1.4f;
         }
-        if (Input.GetButtonUp("Fire1")/*GvrController.AppButtonUp*/)
+        if (Input.GetButtonUp("Fire2")/*GvrController.AppButtonUp*/)
         {
             tmp.GetComponent<Rigidbody>().isKinematic = false;
             tmp.transform.parent = null;
